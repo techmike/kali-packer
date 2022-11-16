@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "kali"
-  config.vm.box_url = "file://builds/kali-linux-2019-W09-amd64-desktop.box"
+  config.vm.box_url = "file://builds/kali-linux-2022-amd64-desktop.box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

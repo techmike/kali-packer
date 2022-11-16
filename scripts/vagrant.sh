@@ -18,11 +18,3 @@ else
 fi
 chown -R vagrant $HOME_DIR/.ssh;
 chmod -R go-rwsx $HOME_DIR/.ssh;
-
-# Disable password based SSH for all users now that we have a key in place
-if $(grep -q '^PasswordAuthentication yes' /etc/ssh_config)
-then
-    sed -i -e 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
-else
-    echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
-fi

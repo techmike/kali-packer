@@ -1,10 +1,10 @@
 # Kali Packer
 
-Currently builds and runs. There is an issue with the virtualbox guest additions not getting installed correctly.
+Automated build of the recent version of kali
 
 ## Build
 ```bash
-packer build -only=virtualbox-iso kali-linux-2019-amd64-desktop.json
+packer build -only=virtualbox-iso kali-linux-2022-amd64-desktop.json
 
 ```
 
@@ -13,7 +13,3 @@ packer build -only=virtualbox-iso kali-linux-2019-amd64-desktop.json
 ```bash
 vagrant up
 ```
-
-# TODO
-* ~~Add image to Vagrantfile~~ Done
-* ~~Fix virtualbox guest additions~~ Done
