@@ -132,12 +132,13 @@
     }
   ],
   "variables": {
-    "box_desc": "Kali Linux 2022-3 64 Bit Desktop",
-    "box_name": "kali-linux-2022-3-amd64-desktop.box",
+    "kali_version": "2023.1",
+    "box_desc": "Kali Linux {{user `kali_version` }} 64 Bit Desktop",
+    "box_name": "kali-linux-{{user `kali_version` }}-amd64-desktop.box",
     "disk_size": "40960",
-    "iso_checksum": "ae977f455924f0268fac437d66e643827089b6f8dc5d76324d6296eb11d997fd",
+    "iso_checksum": "46e05739a20b29db60ca1fff2e90685ea632071c314a9c2416d7c46acef27bf0",
     "iso_checksum_type": "sha256",
-    "iso_url": "https://cdimage.kali.org/kali-2022.3/kali-linux-2022.3-installer-amd64.iso",
-    "vm_name": "kali64wks"
+    "iso_url": "https://cdimage.kali.org/kali-{{user `kali_version` }}/kali-linux-{{user `kali_version` }}-installer-amd64.iso",
+    "vm_name": "kali64wks-{{user `kali_version` }}"
   }
 }
