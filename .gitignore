@@ -1,4 +1,5 @@
 .idea
 builds
-output-ova
+output-ova-orig
 .vagrant
+output-ova*
