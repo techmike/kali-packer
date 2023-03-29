@@ -33,6 +33,12 @@
           "{{.Name}}",
           "--cpus",
           "2"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "128"
         ]
       ],
       "virtualbox_version_file": ".vbox_version",

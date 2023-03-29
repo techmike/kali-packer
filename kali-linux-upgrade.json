@@ -1,0 +1,34 @@
+{
+  "builders": [
+    {
+    "type": "virtualbox-ovf",
+    "source_path": "./output-ova/{{user `vm_name` }}.ova",
+    "output_directory": "./output-ova-prod/",
+    "format": "ova",
+    "ssh_username": "{{user `user`}}",
+    "ssh_password": "{{user `pass`}}",
+    "shutdown_command": "echo '{{user `pass`}}' | sudo -S /sbin/halt -h -p"
+      }
+  ],
+  "description": "{{user `box_desc`}}",
+  "provisioners": [
+    {
+      "override": {
+        "virtualbox-ovf": {
+          "execute_command": " echo {{user `pass` }} | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'"
+        }
+      },
+      "pause_before": "10s",
+      "scripts": [
+        "scripts/prod.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "kali_version": "2023.1",
+    "box_desc": "Kali Linux {{user `kali_version` }} 64 Bit Desktop",
+    "box_name": "kali-linux-{{user `kali_version` }}-amd64-desktop.box",
+    "vm_name": "kali64wks-{{user `kali_version` }}"
+  }
+}
